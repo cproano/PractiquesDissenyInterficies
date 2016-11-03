@@ -1,0 +1,197 @@
+@import url(https://fonts.googleapis.com/css?family=Oswald:400,700);
+
+.Site{
+    background: yellow;
+    height: 100vh;
+    font-family: 'Oswald', sans-serif;
+}
+header{
+    border-style: solid;
+    text-align: center;
+}
+.lateral{
+    background: blueviolet;
+}
+.center{
+    background: greenyellow;
+}
+.pole{
+    background: papayawhip;
+}
+.nav{
+    background: blueviolet;
+    text-align: center;
+    border-style: solid;
+}
+aside{
+    text-align: center;
+    border-style: solid;
+}
+article{
+
+    text-align: center;
+    border-style: solid;
+
+}
+footer{
+    border-style: solid;
+    text-align: center;
+}
+nav.menu{
+      position: fixed;
+      top: 10px;
+}
+footer p{
+
+    width: 100%;
+    text-align: center;
+}
+
+/* DESKTOP */
+/* Per defecte no es posa, perquè ja se suposa que és la estandard. */
+@media screen and (min-device-width : 1024px)  {
+    .Site{
+        height: 100vh;
+        display:flex;
+        background: yellow;
+        color: black;
+        flex-direction: column;
+    }
+    .Site-body {
+        flex-grow: 8;
+        display: flex;
+
+    }
+    header{
+        border-style: solid;
+        width: 100%;
+        flex-grow: 1;
+        text-align: center;
+    }
+    .lateral{
+        background: blueviolet;
+    }
+    .center{
+        background: greenyellow;
+    }
+    .pole{
+        background: papayawhip;
+    }
+    .nav{
+
+        text-align: center;
+        border-style: solid;
+        order: 0;
+        flex-grow: 2;
+        position: initial;
+    }
+    aside{
+        text-align: center;
+        border-style: solid;
+        flex-grow: 2;
+        order: 2;
+    }
+    article{
+        flex-grow: 5;
+        order: 1;
+        text-align: center;
+        border-style: solid;
+
+    }
+    footer{
+        flex-grow: 1;
+        border-style: solid;
+    }
+}
+/* Només posar les regles que canviin, les que siguin igual, no cal. */
+/* SMARTPHONE AND TABS */
+@media screen and (min-device-width : 481px) and (max-device-width : 1023px) {
+    .Site{
+        display: flex;
+        height: 100vh;
+        flex-direction: column;
+    }
+    .Site-body{
+        flex-grow: 8;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+    }
+    header{
+        border-style: solid;
+        width: 100%;
+        flex-grow: 1;
+        text-align: center;
+    }
+    article{
+        order: 0;
+        width: 100%;
+        border-style: solid;
+    }
+    .nav{
+        border-style: solid;
+        order: 1;
+        flex-grow: 1;
+    }
+    aside{
+        border-style: solid;
+        order: 2;
+        flex-grow: 1;
+    }
+
+}
+/* MOBILE */
+@media screen and (max-device-width : 480px) {
+
+    .Site{
+        display: flex;
+        height: 100vh;
+        flex-direction: column;
+    }
+    header{
+        flex-grow: 1;
+    }
+    .Site-body{
+        z-index: 1;
+        flex-grow: 10;
+        display: flex;
+        flex-direction: column;
+    }
+    article{
+        flex-grow: 8;
+    }
+
+
+    footer{
+        flex-grow: 1;
+    }
+    nav.menu {
+        display: flex;
+        flex-direction: column;
+        padding: 0;
+        height: 5rem;
+        overflow: hidden;
+        transition: .7s height ease-in-out;
+        animation: fade 2s linear;
+        z-index: 2;
+    }
+    nav.menu:hover{
+        height: 300px;
+    }
+    @keyframes fade {
+     0%,20% { opacity: 0 }
+    50% { opacity: 1 }
+    }
+    nav a {
+        display: block;
+        padding: 1.2rem;
+    }
+    nav a:first-child {
+        display: block;
+    }
+    nav:hover, nav:focus {
+        height: 23rem;
+    }
+    nav a:first-child { display: block; }
+
+}
